@@ -42,3 +42,11 @@ button{
     background-color: #d0d0d0;
     color: black;
 }
+
+.link{
+    color: #ccc;
+}
+
+.divLink{
+margin-right: 5%;
+}

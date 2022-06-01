@@ -1,6 +1,6 @@
 import React from 'react';
-import './css/App.css';
-import LoginForm from './LoginForm';
+import '../css/App.css';
+import LoginForm from '../molecules/LoginForm';
 
 function Login() {
   return (
