@@ -7,26 +7,24 @@ function LoginForm() {
   const [password, setPassword] = useState("");
   const [accessToken, setToken] = useState("");
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    try {
-      axios({
-        method: "POST",
-        url: "http://localhost:3030/login",
-        data: {
-          email: email,
-          password: password,
-        },
-      }).then((response) => {
+    axios({
+      method: "POST",
+      url: "http://localhost:3030/login",
+      data: {
+        email: email,
+        password: password,
+      },
+    })
+      .then((response) => {
         setToken(response.data.accessToken);
-        if (response.status === 400) {
-          alert("Invalid credentials or user does not exist");
-        }
+      })
+      .catch((error) => {
+        console.log(error);
+        alert("Invalid credentials or user does not exist");
       });
-    } catch (error) {
-      console.log(error);
-    }
   };
 
   return (
