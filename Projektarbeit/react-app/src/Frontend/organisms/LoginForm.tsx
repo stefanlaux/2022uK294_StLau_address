@@ -1,36 +1,16 @@
 import axios from "axios";
 import React, { useState } from "react";
+import loginService from "../../Service/LoginService";
 import "../css/Login.css";
 
 function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [accessToken, setToken] = useState("");
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
-    axios({
-      method: "POST",
-      url: "http://localhost:3030/login",
-      data: {
-        email: email,
-        password: password,
-      },
-    })
-      .then((response) => {
-        setToken(response.data.accessToken);
-      })
-      .catch((error) => {
-        console.log(error);
-        alert("Invalid credentials or user does not exist");
-      });
-  };
 
   return (
     <div>
       <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={(e) => loginService(e, email, password)}>
         <input
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -50,7 +30,7 @@ function LoginForm() {
         />
         <br />
         <button className="btn" type="submit">
-          Sign in
+          Login
         </button>
       </form>
       <div className="divLink">

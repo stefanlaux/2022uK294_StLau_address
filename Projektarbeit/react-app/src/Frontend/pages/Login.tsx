@@ -1,6 +1,5 @@
-import React from 'react';
 import '../css/App.css';
-import LoginForm from '../molecules/LoginForm';
+import LoginForm from '../organisms/LoginForm';
 
 function Login() {
   return (
@@ -9,5 +8,4 @@ function Login() {
     </div>
   );
 }
-
 export default Login;
