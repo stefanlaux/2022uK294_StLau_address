@@ -10,8 +10,7 @@ const handleSubmit = (email: string, password: string) => {
     },
   })
     .then((response) => {
-      console.log("resolved");
-      // return accessToken to Dashboard.tsx so it can be used to make rewquest to the server
+      localStorage.setItem("token", response.data.token);
     })
     .catch((error) => {
       console.log("rejected");
