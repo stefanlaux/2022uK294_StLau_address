@@ -2,7 +2,7 @@ import axios from "axios";
 import { Formik, Field, Form, FormikHelpers } from "formik";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import loginService from "../../Service/LoginService";
+import loginService from "../../Service/UserService";
 import "../css/Login.css";
 
 function LoginForm() {
@@ -22,7 +22,14 @@ function LoginForm() {
         }}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
-            loginService(values.email, values.password);
+            loginService(values.email, values.password).then((response: any) => {
+              localStorage.setItem("token", response.data['accessToken']);
+              navigate("/home");
+            })
+            .catch((error: any) => {
+              console.log("rejected");
+              alert(error.response.request.responseText);
+            });
             setSubmitting(false);
           }, 400);
         }}

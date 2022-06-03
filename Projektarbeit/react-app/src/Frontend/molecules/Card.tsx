@@ -31,7 +31,7 @@ export default function card({ id, streetName, streetNummer, importDate, city }:
           {id}
         </Typography>
         <Typography variant="h5" component="div">
-          {streetName }{ streetNummer}
+          {streetName} {streetNummer}
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
           {city}

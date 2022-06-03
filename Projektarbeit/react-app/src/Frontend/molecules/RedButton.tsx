@@ -1,5 +1,4 @@
 import React from "react";
-import DeleteService from "../../Service/DeleteService";
 import "../css/App.css";
 
 interface props {
@@ -14,7 +13,7 @@ export default function redButton({ useOnClick }: props) {
           onClick={() => {
             if (useOnClick) {
               const pathname = window.location.pathname;
-              DeleteService(1);
+              
             }
           }}
           className="headerButton delete"
