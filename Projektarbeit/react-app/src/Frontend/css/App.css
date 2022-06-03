@@ -1,0 +1,78 @@
+.App {
+  text-align: center;
+}
+
+html {
+  background-color: #2f2f2f;
+}
+
+.headerLine {
+  margin-right: 3%;
+  margin-left: 3%;
+}
+
+.headerTitle {
+  margin-top: 2%;
+  position: relative;
+  color: white;
+}
+
+.headerButton {
+  top: 1%;
+  left: 4%;
+  width: 55px;
+  height: 55px;
+  border-radius: 100%;
+  position: absolute;
+  background-color: #2f2f2f;
+  border-color: white;
+}
+
+.headerButton:hover {
+  background-color: rgb(7, 224, 43);
+  border-color: white;
+}
+
+.headerPicture {
+  width: 80%;
+  top: 8%;
+  left: 7%;
+  position: absolute;
+  -webkit-filter: invert(1);
+  filter: invert(1);
+  transform: rotate(45deg);
+}
+
+.delete:hover {
+  background-color: rgb(241, 0, 0);
+  border-color: white;
+}
+
+.jwt {
+  width: 150%;
+}
+
+.jwtBtn {
+  top: 1%;
+  right: 4%;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background-color: transparent;
+  margin-top: -1%;
+  border: none;
+}
+
+.deletePicture {
+  width: 80%;
+  top: 8%;
+  left: 7%;
+  position: absolute;
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
+
+.gridContainer{
+  padding-left: 40px;
+  padding-right: 40px;
+}
