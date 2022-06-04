@@ -12,40 +12,27 @@ html {
 }
 
 .headerTitle {
-  margin-top: 2%;
+  margin-top: -9px;
   position: relative;
   color: white;
 }
 
+.paginate{
+  position: absolute;
+  padding-top: 13%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+}
+
 .headerButton {
-  top: 1%;
-  left: 4%;
-  width: 55px;
-  height: 55px;
-  border-radius: 100%;
+  width: fit-content;
+  height: fit-content;
+  right: 43%;
+  top: -60px;
+  z-index: 500;
+  border-radius: 150%;
   position: absolute;
-  background-color: #2f2f2f;
-  border-color: white;
-}
-
-.headerButton:hover {
-  background-color: rgb(7, 224, 43);
-  border-color: white;
-}
-
-.headerPicture {
-  width: 80%;
-  top: 8%;
-  left: 7%;
-  position: absolute;
-  -webkit-filter: invert(1);
-  filter: invert(1);
-  transform: rotate(45deg);
-}
-
-.delete:hover {
-  background-color: rgb(241, 0, 0);
-  border-color: white;
 }
 
 .jwt {
@@ -53,26 +40,25 @@ html {
 }
 
 .jwtBtn {
-  top: 1%;
-  right: 4%;
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  background-color: transparent;
-  margin-top: -1%;
-  border: none;
+  width: fit-content;
+  height: fit-content;
+  left: 43%;
+  top: 25px;
+  z-index: 500;
+  border-radius: 150%;
 }
 
-.deletePicture {
-  width: 80%;
-  top: 8%;
-  left: 7%;
+.fingerprint{
   position: absolute;
-  -webkit-filter: invert(1);
-  filter: invert(1);
 }
+
 
 .gridContainer{
   padding-left: 40px;
   padding-right: 40px;
+}
+
+.detailsButton{
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

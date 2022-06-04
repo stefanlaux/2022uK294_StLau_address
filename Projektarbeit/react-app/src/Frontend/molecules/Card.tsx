@@ -5,6 +5,16 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import { Typography } from '@mui/material';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import '../css/App.css';
+
+
+
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
 
 interface props {
     id: string;
@@ -25,6 +35,7 @@ const bull = (
 
 export default function card({ id, streetName, streetNummer, importDate, city }: props) {
   return (
+    <ThemeProvider theme={darkTheme}>
     <Card sx={{ minWidth: 200 }}>
       <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
@@ -42,8 +53,9 @@ export default function card({ id, streetName, streetNummer, importDate, city }:
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="medium">Details</Button>
+        <Button size="medium" className='detailsButton' >Details</Button>
       </CardActions>
     </Card>
+    </ThemeProvider>
   );
 }

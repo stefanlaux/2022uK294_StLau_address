@@ -1,16 +1,15 @@
 import React from "react";
 import JWTButton from "../molecules/JWTButton";
-import RedButton from "../molecules/RedButton";
+import CloseButton from "../molecules/CloseButton";
 import TitleLine from "../molecules/TitleLine";
+import GridCard from "../organisms/GridCard";
 
-export default function 
-create() {
-    return( 
+export default function create() {
+  return (
     <div>
-
-        <TitleLine title={"Create"}/>
-        <JWTButton />
-        <RedButton useOnClick={false}/>
+      <JWTButton />
+      <TitleLine title={"Create"} />
+      <CloseButton />
     </div>
-    );
-    }
+  );
+}

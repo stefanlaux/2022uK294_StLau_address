@@ -1,19 +1,19 @@
 import "../css/App.css";
 import React from "react";
 import { Link } from "react-router-dom";
+import { Button, IconButton } from "@mui/material";
+import { Fingerprint } from "@mui/icons-material";
 
 export default function jwt() {
   return (
     <div>
-      <a href="https://jwt.io/">
-        <button className="jwtBtn" type="button">
-          <img
-            className="jwt"
-            src="https://vegibit.com/wp-content/uploads/2018/07/JSON-Web-Token-Authentication-With-Node.png"
-            alt="JWT Logo"
-          ></img>
-        </button>
-      </a>
+        <IconButton className="jwtBtn" aria-label="fingerprint" size="large" color="success" onClick={
+            () => {
+                alert("JWT: \n" + localStorage.getItem("token"));
+            }
+        }>
+          <Fingerprint className="fingerprint" fontSize="large" />
+        </IconButton>
     </div>
   );
 }

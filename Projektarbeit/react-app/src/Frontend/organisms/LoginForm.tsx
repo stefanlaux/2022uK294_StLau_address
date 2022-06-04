@@ -1,19 +1,27 @@
+import { Alert, Button, Snackbar, Stack } from "@mui/material";
 import axios from "axios";
 import { Formik, Field, Form, FormikHelpers } from "formik";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import loginService from "../../Service/UserService";
 import "../css/Login.css";
+import SnackBar from "./SnackBar";
 
 function LoginForm() {
+
+  const [message, setMessage] = useState("");
+  const [open, setOpen] = useState(false);
+  const [good, setGood] = useState(false);
   interface Values {
     email: string;
     password: string;
   }
   const navigate = useNavigate();
-
   return (
     <div>
+
+      <SnackBar message={message} set={open} good={good}/>
+
       <h1>Login</h1>
       <Formik
         initialValues={{
@@ -22,14 +30,16 @@ function LoginForm() {
         }}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
-            loginService(values.email, values.password).then((response: any) => {
-              localStorage.setItem("token", response.data['accessToken']);
-              navigate("/home");
-            })
-            .catch((error: any) => {
-              console.log("rejected");
-              alert(error.response.request.responseText);
-            });
+            loginService(values.email, values.password)
+              .then((response: any) => {
+                localStorage.setItem("token", response.data["accessToken"]);
+                navigate("/home");
+              })
+              .catch((e: any) => {
+                setGood(false);
+                setMessage(e.response.data);
+                setOpen(true);
+              });
             setSubmitting(false);
           }, 400);
         }}
@@ -61,4 +71,3 @@ function LoginForm() {
 }
 
 export default LoginForm;
-
