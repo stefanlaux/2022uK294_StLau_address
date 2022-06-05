@@ -22,7 +22,7 @@ html {
   padding-top: 13%;
   left: 50%;
   transform: translate(-50%, -50%);
-  
+  z-index: -1;
 }
 
 .headerButton {
@@ -62,3 +62,37 @@ html {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.normalDetails{
+  position: absolute;
+  left: 20%;
+  top: 35%;
+  text-align: left;
+  font-size: 150%;
+  color: white; 
+  transform: translate(-50%, -50%);
+  }
+
+  .idDisplay{
+    position: absolute;
+    right: 1%;
+    top: 35%;
+    text-align: left;
+    font-size: 500%;
+    color: white; 
+    transform: translate(-50%, -50%);
+    }
+  
+    .delete{
+      width: fit-content;
+      position: absolute;
+      top: 350px;
+      right: -45%;
+    }
+
+    .change{
+      width: fit-content;
+      position: absolute;
+      top: 350px;
+      left: -45%;
+    }

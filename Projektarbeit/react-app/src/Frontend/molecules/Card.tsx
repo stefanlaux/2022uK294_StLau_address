@@ -34,6 +34,11 @@ const bull = (
 );
 
 export default function card({ id, streetName, streetNummer, importDate, city }: props) {
+
+  const handleClick = () => {
+    window.location.href = `/details/${id}`;
+  };
+
   return (
     <ThemeProvider theme={darkTheme}>
     <Card sx={{ minWidth: 200 }}>
@@ -53,7 +58,7 @@ export default function card({ id, streetName, streetNummer, importDate, city }:
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="medium" className='detailsButton' >Details</Button>
+        <Button size="medium" className='detailsButton' onClick={handleClick} >Details</Button>
       </CardActions>
     </Card>
     </ThemeProvider>

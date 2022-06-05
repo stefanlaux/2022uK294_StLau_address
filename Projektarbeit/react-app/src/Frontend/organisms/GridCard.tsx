@@ -4,7 +4,6 @@ import React, { useEffect } from "react";
 import Card from "../molecules/Card";
 import "../css/App.css";
 import { AddressService } from "../../Service/AddressService";
-import PaginationController from "./PaginationController";
 
 const darkTheme = createTheme({
   palette: {
@@ -16,6 +15,7 @@ const darkTheme = createTheme({
 export default function GridCard() {
   const [list, setList] = React.useState([]);
   const [page, setPage] = React.useState(1);
+  const [totalPages, setTotalPages] = React.useState(125);
   const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
     setPage(value);
     
@@ -25,11 +25,7 @@ export default function GridCard() {
     AddressService.getAllAddress(page)
     .then((response: any) => {
       setList(response.data);
-    })
-    .catch((error: any) => {
-      console.log(error);
-    });
-  }, [page]);
+    })}, [page]);
 
   return (
     <div>
@@ -65,7 +61,7 @@ export default function GridCard() {
       <Stack spacing={2}>
         <Pagination
           className="paginate"
-          count={125}
+          count={totalPages}
           page={page}
           onChange={handleChange}
           variant="outlined"
