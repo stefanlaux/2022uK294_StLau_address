@@ -12,7 +12,6 @@ export default function create() {
       <CloseButton />
 
       <CreateForm />
-
     </div>
   );
 }

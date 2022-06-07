@@ -8,7 +8,6 @@ import "../css/Login.css";
 import SnackBar from "./SnackBar";
 
 function LoginForm() {
-
   const [message, setMessage] = useState("");
   const [open, setOpen] = useState(false);
   const [good, setGood] = useState(false);
@@ -19,8 +18,7 @@ function LoginForm() {
   const navigate = useNavigate();
   return (
     <div>
-
-      <SnackBar message={message} set={open} good={good}/>
+      <SnackBar message={message} set={open} good={good} />
 
       <h1>Login</h1>
       <Formik

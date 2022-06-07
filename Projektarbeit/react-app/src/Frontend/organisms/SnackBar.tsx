@@ -11,25 +11,25 @@ interface props {
 }
 
 const darkTheme = createTheme({
-    palette: {
-      mode: "dark",
-    },
-  });
+  palette: {
+    mode: "dark",
+  },
+});
 
 export default function SnackBar({ message, set, good }: props): any {
+  const handleClose = (
+    event?: React.SyntheticEvent | Event,
+    reason?: string
+  ) => {
+    if (reason === "clickaway") {
+      return;
+    }
 
-    const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
-        if (reason === 'clickaway') {
-          return;
-        }
-    
-        set = false;
-      };
+    set = false;
+  };
 
-
- 
-    return (
-        <ThemeProvider theme={darkTheme}>
+  return (
+    <ThemeProvider theme={darkTheme}>
       <Snackbar
         anchorOrigin={{ vertical: "top", horizontal: "right" }}
         open={set}
@@ -38,9 +38,10 @@ export default function SnackBar({ message, set, good }: props): any {
         onClose={handleClose}
         color="error"
       >
-        <Alert severity="error" color="error">{message}</Alert>
+        <Alert severity="error" color="error">
+          {message}
+        </Alert>
       </Snackbar>
-        </ThemeProvider>
-    );
-  
+    </ThemeProvider>
+  );
 }

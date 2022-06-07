@@ -2,9 +2,8 @@ import React from "react";
 import "../css/App.css";
 
 interface props {
-  title: string
+  title: string;
 }
-
 
 export default function titleLine({ title }: props) {
   return (

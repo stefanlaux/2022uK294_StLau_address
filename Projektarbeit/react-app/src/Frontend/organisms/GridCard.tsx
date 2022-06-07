@@ -22,7 +22,8 @@ export default function GridCard() {
   useEffect(() => {
     AddressService.getEightAddresses(page).then((response: any) => {
       setList(response.data);
-    })}, [page]);
+    });
+  }, [page]);
 
   return (
     <div>

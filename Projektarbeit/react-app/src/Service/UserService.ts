@@ -12,8 +12,4 @@ const handleSubmit = (email: string, password: string): Promise<AxiosResponse> =
 export function isAuthorized(): boolean {
   return !!localStorage.getItem("token");
 }
-
-
- 
-
 export default handleSubmit;

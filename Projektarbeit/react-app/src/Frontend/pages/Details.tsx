@@ -10,21 +10,19 @@ import JWTButton from "../molecules/JWTButton";
 import TitleLine from "../molecules/TitleLine";
 import AddressDetails from "../organisms/AddressDetails";
 
-
-
 export default function Details() {
-    const { id } = useParams();
-    if (!id) {
-        return <div>No id</div>;
-    }
-    return (
-        <div>
-            <JWTButton />
-            <TitleLine title={"Details"} />
-            <CloseButton />
-            <AddressDetails id={id} />
-            <DeleteButton id={id} />
-        <ChangeButton id={id}/>
-        </div>
-    );
+  const { id } = useParams();
+  if (!id) {
+    return <div>No id</div>;
+  }
+  return (
+    <div>
+      <JWTButton />
+      <TitleLine title={"Details"} />
+      <CloseButton />
+      <AddressDetails id={id} />
+      <DeleteButton id={id} />
+      <ChangeButton id={id} />
+    </div>
+  );
 }
