@@ -15,6 +15,7 @@ export default function app() {
                     <Route path="/login" element={<Login />} />
                     <Route path="/" element={<Login />} />
                     <Route path="/create" element={<Create />} />
+                    <Route path="/update/:id" element={<Create />} />
                     <Route path="/details/:id" element={<Details />} />
                 </Routes>
         </BrowserRouter>

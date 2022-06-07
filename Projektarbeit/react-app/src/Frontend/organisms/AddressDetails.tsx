@@ -1,24 +1,21 @@
 import React, { useEffect } from 'react';
 import { AddressService } from '../../Service/AddressService';
 
-export default function AddressDetails() {
+export default function AddressDetails({id} : {id: string}) {
 
 
-    
-    
-    let path = window.location.pathname.replace("/details/", "");
 
     const [address, setAddress] = React.useState({ id: "", street_name: "", street_number: "", importdate: "", city: "" });
 
     useEffect(() => {
-        AddressService.getAddressById(path)
+        AddressService.getAddressById(id)
             .then((response: any) => {
                 setAddress(response.data);
             })
             .catch((error: any) => {
                 console.log(error);
             });
-    }, [path]);
+    }, [id]);
 
     return (
        <div>

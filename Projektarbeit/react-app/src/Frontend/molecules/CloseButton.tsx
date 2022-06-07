@@ -4,7 +4,7 @@ import React from "react";
 import "../css/App.css";
 
 
-export default function closeButton() {
+export default function CloseButton() {
   return (
     <div>
       <a href="/home">

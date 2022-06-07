@@ -3,7 +3,7 @@ import { IconButton } from "@mui/material";
 import React from "react";
 import "../css/App.css";
 
-export default function createButton() {
+export default function CreateButton() {
   return (
     <div>
       <a href="/create">

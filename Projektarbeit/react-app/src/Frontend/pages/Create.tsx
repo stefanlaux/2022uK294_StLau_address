@@ -2,7 +2,7 @@ import React from "react";
 import JWTButton from "../molecules/JWTButton";
 import CloseButton from "../molecules/CloseButton";
 import TitleLine from "../molecules/TitleLine";
-import GridCard from "../organisms/GridCard";
+import CreateForm from "../organisms/CreateForm";
 
 export default function create() {
   return (
@@ -10,6 +10,9 @@ export default function create() {
       <JWTButton />
       <TitleLine title={"Create"} />
       <CloseButton />
+
+      <CreateForm />
+
     </div>
   );
 }

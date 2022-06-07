@@ -18,6 +18,8 @@ API.interceptors.request.use(
     },
     (error: any) => {
         Promise.reject(error);
+        localStorage.removeItem("token");
+        window.location.href = "/login";
     }
 );
 
