@@ -45,6 +45,7 @@ export default function GridCard() {
           }) => (
             <Grid item xs={12} sm={6} md={4} lg={3}>
               <Card
+                key={address.id}
                 id={address.id}
                 streetName={address.street_name}
                 streetNummer={address.street_number}

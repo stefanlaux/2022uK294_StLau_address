@@ -20,7 +20,6 @@ export default function CreateForm() {
         setStreetNumber(response.data.street_number);
         setCity(response.data.city);
         setImportdate(response.data.importdate);
-        console.log(response.data.importdate);
       });
     }
   }, []);
@@ -28,6 +27,9 @@ export default function CreateForm() {
   return (
     <div>
       <Formik
+
+      enableReinitialize={true}
+
         initialValues={{
           street: streetName,
           city: city,
@@ -80,7 +82,7 @@ export default function CreateForm() {
             <br />
             <Field
               placeholder="Importdate"
-              type="date"
+              type="datetime"
               name="importdate"
               required
             />
