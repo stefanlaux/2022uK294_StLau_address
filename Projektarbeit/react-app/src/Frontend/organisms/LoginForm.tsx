@@ -1,5 +1,3 @@
-import { Alert, Button, Snackbar, Stack } from "@mui/material";
-import axios from "axios";
 import { Formik, Field, Form, FormikHelpers } from "formik";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -8,7 +6,7 @@ import "../css/Login.css";
 import SnackBar from "./SnackBar";
 
 function LoginForm() {
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState("Authentication Error");
   const [open, setOpen] = useState(false);
   const [good, setGood] = useState(false);
   interface Values {
@@ -32,11 +30,14 @@ function LoginForm() {
               .then((response: any) => {
                 localStorage.setItem("token", response.data["accessToken"]);
                 navigate("/home");
+                setGood(true);
+                setOpen(true);
               })
               .catch((e: any) => {
-                setGood(false);
+                setGood(true);
                 setMessage(e.response.data);
                 setOpen(true);
+                
               });
             setSubmitting(false);
           }, 400);

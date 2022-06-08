@@ -23,19 +23,27 @@ export default function AddressDetails({ id }: { id: string }) {
   return (
     <div>
       <div className="normalDetails">
-        <h4>
-          City: {address.city}
+        
+          <p>City:</p>
+          <h3>
+            {address.city}
+          </h3>
           <br />
+          <p>Street Name:</p>
+          <h3>
+            {address.street_name}
+          </h3>
           <br />
-          Street Name: {address.street_name}
+          <p>Street Number:</p>
+          <h3>
+            {address.street_number}
+          </h3>
           <br />
-          <br />
-          Street Number: {address.street_number}
-          <br />
-          <br />
-          Importdate: {address.importdate}
-          <br />
-        </h4>
+          <p>Importdate:</p>
+          <h3>
+            {address.importdate}
+          </h3>
+          
       </div>
       <div className="idDisplay">
         <h1>ID: {address.id}</h1>

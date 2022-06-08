@@ -21,7 +21,8 @@ export default function GridCard() {
 
   useEffect(() => {
     AddressService.getEightAddresses(page).then((response: any) => {
-      setList(response.data);
+      setList(response.data)
+      
     });
   }, [page]);
 
@@ -43,9 +44,8 @@ export default function GridCard() {
             impotdate: string;
             city: string;
           }) => (
-            <Grid item xs={12} sm={6} md={4} lg={3}>
+            <Grid key={address.id} item xs={12} sm={6} md={4} lg={3}>
               <Card
-                key={address.id}
                 id={address.id}
                 streetName={address.street_name}
                 streetNummer={address.street_number}
@@ -53,6 +53,7 @@ export default function GridCard() {
                 city={address.city}
               />
             </Grid>
+            
           )
         )}
       </Grid>

@@ -17,7 +17,7 @@ html {
   color: white;
 }
 
-.paginate{
+.paginate {
   position: absolute;
   padding-top: 13%;
   left: 50%;
@@ -48,51 +48,51 @@ html {
   border-radius: 150%;
 }
 
-.fingerprint{
+.fingerprint {
   position: absolute;
 }
 
-
-.gridContainer{
+.gridContainer {
   padding-left: 40px;
   padding-right: 40px;
 }
 
-.detailsButton{
+.detailsButton {
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.normalDetails{
+.normalDetails {
   position: absolute;
-  left: 20%;
+  top: 15%;
+  left: 5%;
+  text-align: left;
+  width: fit-content;
+  color: white;
+  line-height: 5px;
+  font-size: 20px;
+}
+
+.idDisplay {
+  position: absolute;
+  right: 1%;
   top: 35%;
   text-align: left;
-  font-size: 150%;
-  color: white; 
+  font-size: 500%;
+  color: white;
   transform: translate(-50%, -50%);
-  }
+}
 
-  .idDisplay{
-    position: absolute;
-    right: 1%;
-    top: 35%;
-    text-align: left;
-    font-size: 500%;
-    color: white; 
-    transform: translate(-50%, -50%);
-    }
-  
-    .delete{
-      width: fit-content;
-      position: absolute;
-      top: 350px;
-      right: -45%;
-    }
+.delete {
+  width: fit-content;
+  position: absolute;
+  top: 350px;
+  right: -45%;
+}
 
-    .change{
-      width: fit-content;
-      position: absolute;
-      top: 350px;
-      left: -45%;
-    }
+.change {
+  width: fit-content;
+  position: absolute;
+  top: 350px;
+  left: -45%;
+}
