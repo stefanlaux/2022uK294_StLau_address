@@ -12,7 +12,7 @@ export default function CreateForm() {
   const [streetNumber, setStreetNumber] = useState("");
   const [city, setCity] = useState("");
   const [importdate, setImportdate] = useState("");
-
+  const [ isSubmitting, setSubmitting ] = useState<boolean>(false);
   useEffect(() => {
     if (id) {
       AddressService.getAddressById(id).then((response: any) => {
@@ -36,8 +36,8 @@ export default function CreateForm() {
           number: streetNumber,
           importdate: importdate,
         }}
-        onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
+        onSubmit={(values) => {
+          setSubmitting(true);
             if (!id) {
               AddressService.createAddress(
                 values.street,
@@ -46,6 +46,10 @@ export default function CreateForm() {
                 values.importdate
               ).then(() => {
                 navigate("/home");
+                setSubmitting(false);
+              })
+              .catch(() => {
+                setSubmitting(false);
               });
             } else {
               AddressService.updateAddress(
@@ -56,13 +60,15 @@ export default function CreateForm() {
                 values.importdate
               ).then(() => {
                 navigate("/home");
+                setSubmitting(false);
+              })
+              .catch(() => {
+                setSubmitting(false);
               });
             }
-            setSubmitting(false);
-          }, 500);
+            
         }}
       >
-        {({ isSubmitting }) => (
           <Form>
             <Field
               placeholder="Street Name"
@@ -91,7 +97,6 @@ export default function CreateForm() {
               Submit
             </button>
           </Form>
-        )}
       </Formik>
     </div>
   );
