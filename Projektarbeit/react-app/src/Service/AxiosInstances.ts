@@ -22,15 +22,15 @@ API.interceptors.request.use(
 );
 
 API.interceptors.response.use(
-  (response: any) => {
-      return response;
+  (response) => {
+    return response;
   },
   (error: any) => {
-      if (error.response.status === 401 || error.response.status === 403) {
-      Promise.reject(error);
+    if (error.response.status === 401 || error.response.status === 403) {
       localStorage.removeItem("token");
       window.location.href = "/login";
     }
+    throw error;
   }
-); 
+);
 export default API;

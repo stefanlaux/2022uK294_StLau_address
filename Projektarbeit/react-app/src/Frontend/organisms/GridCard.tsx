@@ -21,7 +21,7 @@ export default function GridCard() {
 
   useEffect(() => {
     AddressService.getEightAddresses(page).then((response: any) => {
-      setList(response.data)
+      setList(response.data);
       
     });
   }, [page]);
@@ -53,7 +53,6 @@ export default function GridCard() {
                 city={address.city}
               />
             </Grid>
-            
           )
         )}
       </Grid>

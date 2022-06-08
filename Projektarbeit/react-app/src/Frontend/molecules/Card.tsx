@@ -1,5 +1,4 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -22,15 +21,6 @@ interface props {
   city: string;
 }
 
-const bull = (
-  <Box
-    component="span"
-    sx={{ display: "inline-block", mx: "2px", transform: "scale(0.8)" }}
-  >
-    •
-  </Box>
-);
-
 export default function card({
   id,
   streetName,
@@ -42,6 +32,8 @@ export default function card({
     window.location.href = `/details/${id}`;
   };
 
+  let title = `${streetName} ${streetNummer}`;
+
   return (
     <ThemeProvider theme={darkTheme}>
       <Card sx={{ minWidth: 200 }}>
@@ -49,8 +41,8 @@ export default function card({
           <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
             {id}
           </Typography>
-          <Typography variant="h5" component="div">
-            {streetName} {streetNummer}
+          <Typography variant="h5" component="div" className="whitespace" >
+            {title}
           </Typography>
           <Typography sx={{ mb: 1.5 }} color="text.secondary">
             {city}

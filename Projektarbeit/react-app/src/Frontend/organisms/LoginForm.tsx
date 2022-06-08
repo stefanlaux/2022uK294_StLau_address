@@ -1,4 +1,4 @@
-import { Formik, Field, Form, FormikHelpers } from "formik";
+import { Formik, Field, Form } from "formik";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import loginService from "../../Service/UserService";
@@ -9,10 +9,7 @@ function LoginForm() {
   const [message, setMessage] = useState("Authentication Error");
   const [open, setOpen] = useState(false);
   const [good, setGood] = useState(false);
-  interface Values {
-    email: string;
-    password: string;
-  }
+ 
   const navigate = useNavigate();
   return (
     <div>
@@ -37,7 +34,6 @@ function LoginForm() {
                 setGood(true);
                 setMessage(e.response.data);
                 setOpen(true);
-                
               });
             setSubmitting(false);
           }, 400);

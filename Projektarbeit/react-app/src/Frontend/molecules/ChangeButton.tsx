@@ -1,5 +1,5 @@
 import { Button } from "@mui/material";
-import { Delete, Update } from "@mui/icons-material";
+import { Update } from "@mui/icons-material";
 import React from "react";
 import "../css/App.css";
 import { useNavigate } from "react-router-dom";

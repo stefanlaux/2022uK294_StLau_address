@@ -1,7 +1,6 @@
 import "../css/App.css";
 import React from "react";
-import { Link } from "react-router-dom";
-import { Button, IconButton } from "@mui/material";
+import { IconButton } from "@mui/material";
 import { Fingerprint } from "@mui/icons-material";
 
 export default function jwt() {
