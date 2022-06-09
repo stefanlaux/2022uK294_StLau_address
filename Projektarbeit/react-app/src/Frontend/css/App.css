@@ -1,0 +1,98 @@
+.App {
+  text-align: center;
+}
+
+html {
+  background-color: #2f2f2f;
+}
+
+.headerLine {
+  margin-right: 3%;
+  margin-left: 3%;
+}
+
+.headerTitle {
+  margin-top: -9px;
+  position: relative;
+  color: white;
+}
+
+.paginate {
+  position: absolute;
+  padding-top: 13%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.headerButton {
+  width: fit-content;
+  height: fit-content;
+  right: 43%;
+  top: -60px;
+  z-index: 500;
+  border-radius: 150%;
+  position: absolute;
+}
+
+.jwt {
+  width: 150%;
+}
+
+.jwtBtn {
+  width: fit-content;
+  height: fit-content;
+  left: 43%;
+  top: 25px;
+  z-index: 500;
+  border-radius: 150%;
+}
+
+.fingerprint {
+  position: absolute;
+}
+
+.gridContainer {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.detailsButton {
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.normalDetails {
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  text-align: left;
+  width: fit-content;
+  color: white;
+  line-height: 5px;
+  font-size: 20px;
+}
+
+.idDisplay {
+  position: absolute;
+  right: 1%;
+  top: 35%;
+  text-align: left;
+  font-size: 500%;
+  color: white;
+  transform: translate(-50%, -50%);
+}
+
+.delete {
+  width: fit-content;
+  position: absolute;
+  top: 350px;
+  right: -45%;
+}
+
+.change {
+  width: fit-content;
+  position: absolute;
+  top: 350px;
+  left: -45%;
+}
