@@ -1,8 +1,5 @@
-import { Grid, Paper, styled } from "@mui/material";
-import { Box } from "@mui/system";
 import React from "react";
 import { useParams } from "react-router-dom";
-import Card from "../molecules/Card";
 import ChangeButton from "../molecules/ChangeButton";
 import CloseButton from "../molecules/CloseButton";
 import DeleteButton from "../molecules/DeleteButton";

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { AddressService } from "../../Service/AddressService";
 import "../css/Login.css";
+import * as Yup from "yup";
 
 export default function CreateForm() {
   const navigate = useNavigate();
@@ -24,6 +25,13 @@ export default function CreateForm() {
     }
   }, []);
 
+  const validateSchema = Yup.object().shape({
+    importdate: Yup.string().required("Importdate is required").matches(/\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d([+-][0-2]\d:[0-5]\d|Z)/, "Invalid date format"),
+    street: Yup.string().required("Street name is required").max(50, "Street name must be less than 50 characters"),
+    number: Yup.string().required("Street number is required"),
+    city: Yup.string().required("City is required").max(30, "City must be less than 30 characters")
+  });
+
   return (
     <div>
       <Formik
@@ -36,6 +44,7 @@ export default function CreateForm() {
           number: streetNumber,
           importdate: importdate,
         }}
+        validationSchema={validateSchema}
         onSubmit={(values) => {
           setSubmitting(true);
             if (!id) {
@@ -69,34 +78,41 @@ export default function CreateForm() {
             
         }}
       >
+        {({ errors, touched }) => (
           <Form>
             <Field
               placeholder="Street Name"
               type="street"
               name="street"
-              required
             />
+             {touched.street && errors.street && <div>{errors.street}</div>}
             <br />
             <Field
               placeholder="Street Number"
               type="number"
               name="number"
-              required
             />
+             {touched.number && errors.number && <div>{errors.number}</div>}
             <br />
-            <Field placeholder="City" type="city" name="city" required />
+            <Field 
+            placeholder="City" 
+            type="city" 
+            name="city" 
+             />
+             {touched.city && errors.city && <div>{errors.city}</div>}
             <br />
             <Field
               placeholder="Importdate"
               type="datetime"
               name="importdate"
-              required
             />
+             {touched.importdate && errors.importdate && <div>{errors.importdate}</div>}
             <br />
             <button className="btn" type="submit" disabled={isSubmitting}>
               Submit
             </button>
           </Form>
+        )}
       </Formik>
     </div>
   );

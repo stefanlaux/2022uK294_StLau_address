@@ -23,7 +23,6 @@ export default function DeleteButton({ id }: { id: string }) {
             <SnackBar
               message={error.response.data.message}
               set={true}
-              good={true}
             />;
           });
       }}
