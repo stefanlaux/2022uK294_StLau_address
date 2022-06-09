@@ -11,6 +11,8 @@ import React, { useEffect } from "react";
 import Card from "../molecules/Card";
 import "../css/App.css";
 import { AddressService } from "../../Service/AddressService";
+import { isAuthorized } from "../../Service/UserService";
+import { useNavigate } from "react-router-dom";
 
 const darkTheme = createTheme({
   palette: {
@@ -28,14 +30,10 @@ export default function GridCard() {
 
   useEffect(() => {
     setOpen(true);
-    AddressService.getEightAddresses(page).then((response: any) => {
-      setTimeout(() => {
+      AddressService.getEightAddresses(page).then((response: any) => {
         setList(response.data);
         setOpen(false);
-      }, 250);
-      
-      
-    });
+      });  
   }, [page]);
 
   return (
@@ -82,7 +80,7 @@ export default function GridCard() {
           />
         </Stack>
         <Backdrop open={open}>
-          <CircularProgress />
+          <CircularProgress color="error" />
         </Backdrop>
       </ThemeProvider>
     </div>
