@@ -8,13 +8,11 @@ import SnackBar from "./SnackBar";
 function LoginForm() {
   const [message, setMessage] = useState("Authentication Error");
   const [open, setOpen] = useState(false);
-  const [good, setGood] = useState(false);
  
   const navigate = useNavigate();
   return (
     <div>
-      <SnackBar message={message} set={open} good={good} />
-
+      <SnackBar message={message} set={open} />
       <h1>Login</h1>
       <Formik
         initialValues={{
@@ -27,11 +25,8 @@ function LoginForm() {
               .then((response: any) => {
                 localStorage.setItem("token", response.data["accessToken"]);
                 navigate("/home");
-                setGood(true);
-                setOpen(true);
               })
               .catch((e: any) => {
-                setGood(true);
                 setMessage(e.response.data);
                 setOpen(true);
               });

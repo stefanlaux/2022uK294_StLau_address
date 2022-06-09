@@ -16,8 +16,8 @@ export default function ChangeButton({ id }: { id: string }) {
         navigate(`/update/${id}`);
       }}
     >
-      <Update />
-      Change
+      <Update /> 
+       Change
     </Button>
   );
 }

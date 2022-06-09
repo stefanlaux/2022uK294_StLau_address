@@ -2,12 +2,11 @@ import { ThemeProvider } from "@emotion/react";
 import { Close, HorizontalRule } from "@mui/icons-material";
 import { Alert, createTheme, IconButton, Snackbar } from "@mui/material";
 import { blue, red } from "@mui/material/colors";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 interface props {
   message: string;
   set: boolean;
-  good: boolean;
 }
 
 const darkTheme = createTheme({
@@ -16,15 +15,8 @@ const darkTheme = createTheme({
   },
 });
 
-export default function SnackBar({ message, set, good }: props): any {
-  const handleClose = (
-    event?: React.SyntheticEvent | Event,
-    reason?: string
-  ) => {
-    if (reason === "clickaway") {
-      return;
-    }
-
+export default function SnackBar({ message, set }: props): any {
+  const handleClose = () => {
     set = false;
   };
 
@@ -34,9 +26,7 @@ export default function SnackBar({ message, set, good }: props): any {
         anchorOrigin={{ vertical: "top", horizontal: "right" }}
         open={set}
         autoHideDuration={2000}
-        message={message}
         onClose={handleClose}
-        color="error"
       >
         <Alert severity="error" color="error">
           {message}
