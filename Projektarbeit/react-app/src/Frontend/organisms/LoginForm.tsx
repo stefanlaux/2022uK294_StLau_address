@@ -51,11 +51,6 @@ function LoginForm() {
           </Form>
         )}
       </Formik>
-      <div className="divLink">
-        <a className="link" href="/register">
-          Neues Konto erstellen
-        </a>
-      </div>
     </div>
   );
 }
